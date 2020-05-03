@@ -32,16 +32,16 @@ export default class Spaceship {
     update(timeDelta) {
         if(global.sessionActive) {
             if(global.inputHandler.isScreenTouched() || global.inputHandler.isKeyPressed("KeyW")) {
-                this._pivotPoint.translateZ(this._speed * timeDelta);
-            }
-            if(global.inputHandler.isKeyPressed("KeyS")) {
                 this._pivotPoint.translateZ(-this._speed * timeDelta);
             }
+            if(global.inputHandler.isKeyPressed("KeyS")) {
+                this._pivotPoint.translateZ(this._speed * timeDelta);
+            }
             if(global.inputHandler.isKeyPressed("KeyD")) {
-                this._pivotPoint.translateX(-this._speed * timeDelta);
+                this._pivotPoint.translateX(this._speed * timeDelta);
             }
             if(global.inputHandler.isKeyPressed("KeyA")) {
-                this._pivotPoint.translateX(this._speed * timeDelta);
+                this._pivotPoint.translateX(-this._speed * timeDelta);
             }
         }
     }

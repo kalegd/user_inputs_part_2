@@ -16,11 +16,11 @@ export default class SessionHandler {
     }
 
     _setupXRStartButton(renderer) {
-        this._div = VRButton.createButton(renderer);
-        global.renderer.xr.addEventListener("sessionstart", () => {
+        document.body.appendChild(VRButton.createButton(renderer));
+        renderer.xr.addEventListener("sessionstart", () => {
             global.sessionActive = true;
         });
-        global.renderer.xr.addEventListener("sessionend", () => {
+        renderer.xr.addEventListener("sessionend", () => {
             global.sessionActive = false;
         });
     }
